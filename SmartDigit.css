@@ -1,63 +1,604 @@
-#accueil{
-    background-color:#DFE9E7;
-}
-/* Général */
+/* Styles globaux */
 body {
-    font-family: '', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 /* Barre de navigation */
-nav {
-    position: fixed;
-    top: 0;
+.navbar {
     width: 100%;
-    background: #DFE9E7;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
+    height: 50px;
+    display:flex;
     align-items: center;
+    background-color: #DFE9E7;
+    padding:0 20px ; 
+    z-index: 5;
 }
-
-nav .logo {color: #38DAB4;
-    font-size: 24px;
+.logo {
+    font-family: 'Farro', sans-serif;
     font-weight: bold;
-}
-.logo.Smart{ color: black;}
-.logo.Digit{
-    color:#38DAB4 ;
-}
-nav .menu {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+    font-size: 24px;
+    color: black;
+    z-index: 5;
+    height: 110px;
 }
 
-nav .menu li a {
-    text-decoration: none;
-    color:black;
+.logo span {
+    color: #38DAB4;
+}
+
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    color: black;
+    margin-left: 100px;
+    margin-top:50px;
+}
+
+.menu li a {
     font-size: 16px;
 }
 
-/* Sections */
-section {
-    padding: 100px 20px;
-    min-height: 100vh;
+.contact-button {
+    display: inline-block;
+    width: 180px;
+    height: 37px;
+    background: linear-gradient(to right, #104E3F, #38DAB4);        
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 300px;
+    margin-top: 50px;
+    z-index: 10;
+}
+ .contact-button a {
+    color:#ffffff;
 }
 
-#accueil {
-    background: url('images/background.jpg') no-repeat center center/cover;
-    color: white;
+/* Section Accueil */
+#home {
+    position: relative;
+    background-color: #DFE9E7; /* Couleur de fond */
+    padding: 100px 50px; /* Espace autour du contenu */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh; /* Prend toute la hauteur de la fenêtre */
+}
+
+.home .content {
+    max-width: 600px;
+}
+
+.content h4 {
+    margin: 0 0 20px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(to right, #104E3F, #38DAB4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+ .content h1 {
+   font-family: 'fira sans',sans-serif;
+   font-size: 50px;
+   font-weight: bold;
+   background: linear-gradient(to right, #104E3F, #38DAB4);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   margin: 10px;
+}
+
+.home p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.services-button {
+    background: white; /* Dégradé */
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border-color: #104E3F;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    margin-left: 100px;
+}
+  .services-button a{
+    color: #104E3F;
+}
+
+
+/* Ellipse contenant l'image */
+.ellipse {
+    position: absolute;
+    top: -150px; /* Décale vers le haut */
+    right: -300px; /* Décale vers la droite */
+    width: 1000px; /* Taille de l'ellipse */
+    height: 1000px;
+    border-radius: 50%; /* Rend l'ellipse ronde */
+    overflow: hidden;
+     z-index: 1; /* Envoie l'ellipse derrière le contenu */
+}
+    .ellipse img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste l'image à l'ellipse */
+}
+
+/* Section À propos */
+#about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 100px;
+}
+
+.about-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-text h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    background: linear-gradient(to right, #104E3F, #38DAB4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.about-text h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: semibold;
+    color: black;
+    margin: 20px 0;
+}
+
+.about-text p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: black;
+    width: 641px;
+    height: 190px;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 50px;
+    object-fit: cover;
+    height: auto;
+}
+
+
+/* Section Nos Services */
+#services {
+    padding: 60px 100px;
     text-align: center;
 }
+
+.services-header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(to right, #104E3F, #38DAB4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.services-header h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: semibold;
+    color: black;
+    margin: 10px 0;
+}
+
+.services-header p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: black;
+    margin: 20px 0;
+}
+
+/* Conteneur des services */
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+/* Rectangles des services */
+.service-box {
+    width: 300px;
+    height: 350px;
+    background: linear-gradient(to bottom, #ffffff, #E2DFDF);
+    border-radius: 52px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.service-box:hover {
+    border: 2px solid transparent;
+    background-image: linear-gradient(to bottom, #ffff, #E2DFDF), linear-gradient(to right, #38DAB4, #104E3F);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+/* Icones */
+.service-icon {
+    width: 164px;
+    height: 155px;
+    margin: 22px auto 20px;
+}
+
+/* Titre des services */
+.service-box h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: semibold;
+    color: #4DDEA4;
+    margin: 10px 0;
+}
+
+/* Paragraphe des services */
+.service-box p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: black;
+    line-height: 1.6;
+    margin: 0 auto;
+    width: 90%;
+    height: 143px;
+}
+
+
+/* Section nos Projets */
+#projects {
+    padding: 60px 100px;
+    text-align: center;
+}
+
+.projects-header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(to right, #104E3F, #38DAB4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin: 0;
+}
+
+.projects-header h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: semibold;
+    color: black;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.projects-header p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: black;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Portfolio Header */
+.projects-content h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: semibold;
+    color: black;
+    text-align: left;
+    margin: 20px 40px;
+}
+
+/* Gallery */
+.projects-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 20px 40px;
+    margin-left: -5px;
+}
+
+.project-image:hover {
+    transform: scale(1.05);
+}
+
+
+/* Section Contact */
+#contact {
+    padding: 50px 100px;
+    text-align: center;
+}
+
+.contact h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(to right, #104E3F, #38DAB4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.contact h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: semibold;
+    color: black;
+    margin: 20px 0;
+}
+
+.contact p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: black;
+    margin: 20px auto 40px;
+    width: 60%;
+    line-height: 1.5;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: #D9D9D9;
+    width: 1242px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.contact-form label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: semibold;
+    color: black;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    height: 74px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    background: linear-gradient(to right, #104E3F, #38DAB4);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 153px;
+    height: 37px;
+}
+
+.contact-form button:hover {
+    opacity: 0.9;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    padding: 0 100px;
+}
+
+.contact-info .info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-info .icon {
+    width: 45px;
+    height: 45px;
+}
+
+.contact-info h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: regular;
+    color: black;
+}
+
 
 /* Footer */
-footer {
-    background-image: -moz-linear-gradient();
+.footer {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(to bottom, #104E3F 45%, rgba(0, 0, 0, 0.5)), 
+                url('image\ footer.jpg') no-repeat center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 100px;
     color: white;
-    text-align: center;
-    padding: 20px;
+    max-height: 400px;
+    margin-top: 300px;
+}
+
+.logo {
+        font-family: 'Farro', sans-serif;
+        font-weight: bold;
+        font-size: 34px;
+        color: white;
+        margin-top: 100px;
+        margin-left: 50px;
+    }
+
+    
+    .logo span {
+        color: #38DAB4;
+    }
+
+
+.footer-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: regular;
+    margin: 20px 0;
+    width: 527px;
+    height: 119px;
+    position: absolute;
+    top: 214px;
+    left: 43px;
+}
+.P2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: regular;
+    margin-top: 100px;
+}
+
+.footer-sections {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 62px;
+    left: 856px;
+}
+
+.footer-pages h4
+ {
+    font-family: 'Farro', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin: 10px 0;
+}
+
+.footer-menu a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: regular;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: #38DAB4;
+}
+
+.footer-socials {
+    margin-left: 50px;
+    position: relative;
+    left: 442px;
+}
+.footer-socials h4{
+    font-family: 'Farro', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: -1750px;
+}
+.social-icons {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    margin-left: -1700px;
+}
+
+.social-icons a {
+    width: 70px;
+    height: 70px;
+    display: block;
+}
+
+.social-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);
 }
 
